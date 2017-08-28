@@ -1,8 +1,8 @@
 {
   "ios": {
-    "1.0.1": {
+    "1.0.0": {
       "1": {
-        "date": 20170827,
+        "date": 20170828,
         "url": "https://moongift.s3.amazonaws.com/app-update/apps/110.zip"
       },
       "0": {
