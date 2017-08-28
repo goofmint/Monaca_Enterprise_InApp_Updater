@@ -9,9 +9,14 @@ router.post('/', function(req, res, next) {
 });
 
 router.post('/download', function(req, res, next) {
-  console.log(req);
-  var buf = fs.readFileSync(__dirname + `/${req.params.os}-v1.0.0.zip`);
-  res.send(buf, { 'Content-Type': 'application/zip' }, 200);
+  var path = __dirname + `/${req.body.os}-v${req.body.app_version}-${req.body.update_number}.zip`;
+  try {
+    fs.statSync(path);
+    var buf = fs.readFileSync(path);
+    res.send(buf, { 'Content-Type': 'application/zip' }, 200);
+  }catch(e) {
+    res.status(404).json({});
+  }
 });
 
 module.exports = router;
