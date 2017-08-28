@@ -8,8 +8,8 @@ router.post('/', function(req, res, next) {
   res.json(update);
 });
 
-router.post('/download/ios-v1.1.1.zip', function(req, res, next) {
-  var buf = fs.readFileSync(__dirname + '/ios-v1.1.1.zip');
+router.post('/download/ios-v1.0.0.zip', function(req, res, next) {
+  var buf = fs.readFileSync(__dirname + '/ios-v1.0.0.zip');
   res.send(buf, { 'Content-Type': 'application/zip' }, 200);
 });
 
