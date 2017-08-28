@@ -1,0 +1,14 @@
+{
+  "ios": {
+    "1.0.1": {
+      "1": {
+        "date": 20170827,
+        "url": "https://moongift.s3.amazonaws.com/app-update/apps/110.zip"
+      },
+      "0": {
+        "date": 20170826,
+        "url": "https://moongift.s3.amazonaws.com/app-update/apps/100.zip"
+      }
+    }
+  }
+}
