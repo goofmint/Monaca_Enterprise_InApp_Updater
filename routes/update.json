@@ -2,13 +2,16 @@
   "ios": {
     "1.0.0": {
       "2": {
-        "date": 20170828
+        "date": 20170828,
+        "url": "https://guarded-scrubland-44179.herokuapp.com/download/"
       },
       "1": {
-        "date": 20170828
+        "date": 20170828,
+        "url": "https://guarded-scrubland-44179.herokuapp.com/download/"
       },
       "0": {
-        "date": 20170826
+        "date": 20170826,
+        "url": "https://guarded-scrubland-44179.herokuapp.com/download/"
       }
     }
   }
