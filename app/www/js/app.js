@@ -1,29 +1,47 @@
-ons.ready(() => {
-  
-  
-  monaca.InAppUpdater.autoUpdate( {
-    connectDelay : 0000,
+ons.ready(() => {  
+  monaca.InAppUpdater.autoUpdate({
+    // サーバー接続を開始するまでの待機時間
+    connectDelay : 1000,
+    // タイムアウトする時間
     connectTimeout : 30000,
+    // 読み込み時のタイムアウト時間
     readTimeout: 300000,
+    // 更新成功時に呼ばれる関数
     nextTask : function(res) {
       if (res.requireRestart) {
         monaca.InAppUpdater.updateAndRestart().then(
-          function() { },
-          function(fail) { alert( JSON.stringify(fail) ); }
+          function() {
+            // アップデート完了
+          },
+          function(fail) {
+            // アップデートでエラー
+            alert( JSON.stringify(fail) );
+          }
         );
       } else {
-        alert("App is started!");
+        // 特にアップデートの必要がない場合
       }
     },
+    // 更新失敗時に呼ばれる関数
     failTask : function(res) {
-      monaca.InAppUpdater.showAlertDialog(
-        { title : "Error Code "+res.error.code ,
-          message : res.error.message ,
-          button : { label : "OK" , handler : function() { } }
-        } ).then(
-        function(json) {  },
-        function(fail) { }
-      );
+      // ダイアログ ( タイトルとメッセージ ) を表示します
+      monaca.InAppUpdater.showAlertDialog({
+        // ダイアログのタイトル
+        title: "Error Code " + res.error.code,
+        // メッセージ本文
+        message: res.error.message,
+        // 表示するボタン
+        button: {
+          // ボタンのラベル
+          label: "OK",
+          handler : function() {
+            // ボタンがクリックされたときに呼ばれる関数
+          }}
+        }).then(function(json) {
+          // 成功時のコールバック
+        }, function(fail) {
+          // 失敗時のコールバック
+        });
     }
   });
   
