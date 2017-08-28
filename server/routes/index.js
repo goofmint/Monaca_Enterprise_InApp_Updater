@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var update  = require('./update.json')
 var fs = require('fs');
 
 /* GET home page. */
+var update  = require('./update.json')
 router.post('/', function(req, res, next) {
   res.json(update);
 });
