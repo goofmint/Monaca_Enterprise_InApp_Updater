@@ -9,7 +9,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.post('/download', function(req, res, next) {
-  var buf = fs.readFileSync('./111.zip');
+  var buf = fs.readFileSync(__dirname + '/111.zip');
   res.send(buf, { 'Content-Type': 'application/zip' }, 200);
 });
 
