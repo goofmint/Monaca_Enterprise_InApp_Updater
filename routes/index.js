@@ -9,7 +9,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.post('/download', function(req, res, next) {
-  var path = __dirname + `/${req.body.os}-v${req.body.app_version}-${req.body.update_number}.zip`;
+  var path = __dirname + `../files/${req.body.os}-v${req.body.app_version}-${req.body.update_number}.zip`;
   try {
     fs.statSync(path);
     var buf = fs.readFileSync(path);
