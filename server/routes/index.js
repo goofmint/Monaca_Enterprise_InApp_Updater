@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var update  = require('./update.json')
 var fs = require('fs');
 
 /* GET home page. */
-var update  = require('./update.json')
 router.post('/', function(req, res, next) {
   res.json(update);
 });
 
 router.post('/download', function(req, res, next) {
-  var path = __dirname + `../files/${req.body.os}-v${req.body.app_version}-${req.body.update_number}.zip`;
+  console.log(req.body);
+  var path = __dirname + `/../files/${req.body.os}-v${req.body.app_version}-${req.body.update_number}.zip`;
+  console.log(path);
   try {
     fs.statSync(path);
     var buf = fs.readFileSync(path);
